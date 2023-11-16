@@ -1,0 +1,73 @@
+[2023-11-07T21:07:49] [INFO] Building image...
+sha256:92476b23011921cfa819f372d9e24982ef1ac98773fbcd89a556fa7d8a8042b7
+[2023-11-07T21:07:50] [INFO] Running checker...
+
+
+### CHECKER
+
+
+make clean_src clean_snippets src snippets
+make[1]: Entering directory '/build/root/assignment-memory-allocator/tests'
+make -C /build/root/assignment-memory-allocator/src clean
+make[2]: Entering directory '/build/root/assignment-memory-allocator/src'
+rm -f ../src.zip
+rm -f libosmem.so
+rm -f osmem.o /build/root/assignment-memory-allocator/utils/printf.o
+make[2]: Leaving directory '/build/root/assignment-memory-allocator/src'
+rm -rf snippets/test-all snippets/test-calloc-arrays snippets/test-calloc-block-reuse snippets/test-calloc-coalesce-big snippets/test-calloc-coalesce snippets/test-calloc-expand-block snippets/test-calloc-no-preallocate snippets/test-calloc-no-split snippets/test-calloc-preallocate snippets/test-calloc-split-first snippets/test-calloc-split-last snippets/test-calloc-split-middle snippets/test-calloc-split-one-block snippets/test-calloc-split-vector snippets/test-malloc-arrays snippets/test-malloc-block-reuse snippets/test-malloc-coalesce-big snippets/test-malloc-coalesce snippets/test-malloc-expand-block snippets/test-malloc-no-preallocate snippets/test-malloc-no-split snippets/test-malloc-preallocate snippets/test-malloc-split-first snippets/test-malloc-split-last snippets/test-malloc-split-middle snippets/test-malloc-split-one-block snippets/test-malloc-split-vector snippets/test-realloc-arrays snippets/test-realloc-block-reuse snippets/test-realloc-coalesce-big snippets/test-realloc-coalesce snippets/test-realloc-expand-block snippets/test-realloc-no-preallocate snippets/test-realloc-no-split snippets/test-realloc-preallocate snippets/test-realloc-split-first snippets/test-realloc-split-last snippets/test-realloc-split-middle snippets/test-realloc-split-one-block snippets/test-realloc-split-vector
+make -C /build/root/assignment-memory-allocator/src
+make[2]: Entering directory '/build/root/assignment-memory-allocator/src'
+gcc -fPIC -Wall -Wextra -g -I/build/root/assignment-memory-allocator/utils  -c -o osmem.o osmem.c
+osmem.c: In function 'os_calloc':
+osmem.c:168:8: warning: unused variable 'ret' [-Wunused-variable]
+  168 |  void *ret = (void *)block + ALIGN(META_SIZE);
+      |        ^~~
+osmem.c: In function 'os_free':
+osmem.c:348:24: warning: unused variable 'tmp' [-Wunused-variable]
+  348 |     struct block_meta *tmp = block->next;
+      |                        ^~~
+gcc -fPIC -Wall -Wextra -g -I/build/root/assignment-memory-allocator/utils  -c -o /build/root/assignment-memory-allocator/utils/printf.o /build/root/assignment-memory-allocator/utils/printf.c
+gcc -shared -o libosmem.so osmem.o /build/root/assignment-memory-allocator/utils/printf.o
+make[2]: Leaving directory '/build/root/assignment-memory-allocator/src'
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-all snippets/test-all.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-arrays snippets/test-calloc-arrays.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-block-reuse snippets/test-calloc-block-reuse.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-coalesce-big snippets/test-calloc-coalesce-big.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-coalesce snippets/test-calloc-coalesce.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-expand-block snippets/test-calloc-expand-block.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-no-preallocate snippets/test-calloc-no-preallocate.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-no-split snippets/test-calloc-no-split.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-preallocate snippets/test-calloc-preallocate.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-first snippets/test-calloc-split-first.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-last snippets/test-calloc-split-last.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-middle snippets/test-calloc-split-middle.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-one-block snippets/test-calloc-split-one-block.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-vector snippets/test-calloc-split-vector.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-arrays snippets/test-malloc-arrays.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-block-reuse snippets/test-malloc-block-reuse.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-coalesce-big snippets/test-malloc-coalesce-big.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-coalesce snippets/test-malloc-coalesce.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-expand-block snippets/test-malloc-expand-block.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-no-preallocate snippets/test-malloc-no-preallocate.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-no-split snippets/test-malloc-no-split.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-preallocate snippets/test-malloc-preallocate.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-first snippets/test-malloc-split-first.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-last snippets/test-malloc-split-last.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-middle snippets/test-malloc-split-middle.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-one-block snippets/test-malloc-split-one-block.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-vector snippets/test-malloc-split-vector.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-arrays snippets/test-realloc-arrays.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-block-reuse snippets/test-realloc-block-reuse.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-coalesce-big snippets/test-realloc-coalesce-big.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-coalesce snippets/test-realloc-coalesce.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-expand-block snippets/test-realloc-expand-block.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-no-preallocate snippets/test-realloc-no-preallocate.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-no-split snippets/test-realloc-no-split.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-preallocate snippets/test-realloc-preallocate.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-first snippets/test-realloc-split-first.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-last snippets/test-realloc-split-last.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-middle snippets/test-realloc-split-middle.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-one-block snippets/test-realloc-split-one-block.c -L/build/root/assignment-memory-allocator/src -losmem
+gcc -I/build/root/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-vector snippets/test-realloc-split-vector.c -L/build/root/assignment-memory-allocator/src -losmem
+make[1]: Leaving directory '/build/root/assignment-memory-allocator/tests'
+python3 run_tests.py

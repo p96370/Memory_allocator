@@ -1,0 +1,99 @@
+make clean_src clean_snippets src snippets
+make[1]: Entering directory '/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/tests'
+make -C /home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src clean
+make[2]: Entering directory '/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src'
+rm -f ../src.zip
+rm -f libosmem.so
+rm -f osmem.o /home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils/printf.o
+make[2]: Leaving directory '/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src'
+rm -rf snippets/test-all snippets/test-calloc-arrays snippets/test-calloc-block-reuse snippets/test-calloc-coalesce-big snippets/test-calloc-coalesce snippets/test-calloc-expand-block snippets/test-calloc-no-preallocate snippets/test-calloc-no-split snippets/test-calloc-preallocate snippets/test-calloc-split-first snippets/test-calloc-split-last snippets/test-calloc-split-middle snippets/test-calloc-split-one-block snippets/test-calloc-split-vector snippets/test-malloc-arrays snippets/test-malloc-block-reuse snippets/test-malloc-coalesce-big snippets/test-malloc-coalesce snippets/test-malloc-expand-block snippets/test-malloc-no-preallocate snippets/test-malloc-no-split snippets/test-malloc-preallocate snippets/test-malloc-split-first snippets/test-malloc-split-last snippets/test-malloc-split-middle snippets/test-malloc-split-one-block snippets/test-malloc-split-vector snippets/test-realloc-arrays snippets/test-realloc-block-reuse snippets/test-realloc-coalesce-big snippets/test-realloc-coalesce snippets/test-realloc-expand-block snippets/test-realloc-no-preallocate snippets/test-realloc-no-split snippets/test-realloc-preallocate snippets/test-realloc-split-first snippets/test-realloc-split-last snippets/test-realloc-split-middle snippets/test-realloc-split-one-block snippets/test-realloc-split-vector
+make -C /home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src
+make[2]: Entering directory '/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src'
+gcc -fPIC -Wall -Wextra -g -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils  -c -o osmem.o osmem.c
+gcc -fPIC -Wall -Wextra -g -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils  -c -o /home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils/printf.o /home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils/printf.c
+gcc -shared -o libosmem.so osmem.o /home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils/printf.o
+make[2]: Leaving directory '/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src'
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-all snippets/test-all.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-arrays snippets/test-calloc-arrays.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-block-reuse snippets/test-calloc-block-reuse.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-coalesce-big snippets/test-calloc-coalesce-big.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-coalesce snippets/test-calloc-coalesce.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-expand-block snippets/test-calloc-expand-block.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-no-preallocate snippets/test-calloc-no-preallocate.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-no-split snippets/test-calloc-no-split.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-preallocate snippets/test-calloc-preallocate.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-first snippets/test-calloc-split-first.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-last snippets/test-calloc-split-last.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-middle snippets/test-calloc-split-middle.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-one-block snippets/test-calloc-split-one-block.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-vector snippets/test-calloc-split-vector.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-arrays snippets/test-malloc-arrays.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-block-reuse snippets/test-malloc-block-reuse.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-coalesce-big snippets/test-malloc-coalesce-big.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-coalesce snippets/test-malloc-coalesce.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-expand-block snippets/test-malloc-expand-block.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-no-preallocate snippets/test-malloc-no-preallocate.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-no-split snippets/test-malloc-no-split.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-preallocate snippets/test-malloc-preallocate.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-first snippets/test-malloc-split-first.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-last snippets/test-malloc-split-last.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-middle snippets/test-malloc-split-middle.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-one-block snippets/test-malloc-split-one-block.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-vector snippets/test-malloc-split-vector.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-arrays snippets/test-realloc-arrays.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-block-reuse snippets/test-realloc-block-reuse.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-coalesce-big snippets/test-realloc-coalesce-big.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-coalesce snippets/test-realloc-coalesce.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-expand-block snippets/test-realloc-expand-block.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-no-preallocate snippets/test-realloc-no-preallocate.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-no-split snippets/test-realloc-no-split.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-preallocate snippets/test-realloc-preallocate.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-first snippets/test-realloc-split-first.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-last snippets/test-realloc-split-last.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-middle snippets/test-realloc-split-middle.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-one-block snippets/test-realloc-split-one-block.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+gcc -I/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-vector snippets/test-realloc-split-vector.c -L/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/src -losmem
+make[1]: Leaving directory '/home/elena/SO/teme/Memory_allocator/assignment-memory-allocator/tryagain/assignment-memory-allocator/tests'
+python3 run_tests.py
+test-malloc-no-preallocate       ........................ passed ...   2
+test-malloc-preallocate          ........................ passed ...   3
+test-malloc-arrays               ........................ passed ...   5
+test-malloc-block-reuse          ........................ passed ...   3
+test-malloc-expand-block         ........................ passed ...   2
+test-malloc-no-split             ........................ passed ...   2
+test-malloc-split-one-block      ........................ passed ...   3
+test-malloc-split-first          ........................ passed ...   2
+test-malloc-split-last           ........................ passed ...   2
+test-malloc-split-middle         ........................ passed ...   3
+test-malloc-split-vector         ........................ passed ...   2
+test-malloc-coalesce             ........................ passed ...   3
+test-malloc-coalesce-big         ........................ passed ...   3
+test-calloc-no-preallocate       ........................ passed ...   1
+test-calloc-preallocate          ........................ passed ...   1
+test-calloc-arrays               ........................ passed ...   5
+test-calloc-block-reuse          ........................ passed ...   1
+test-calloc-expand-block         ........................ passed ...   1
+test-calloc-no-split             ........................ passed ...   1
+test-calloc-split-one-block      ........................ passed ...   1
+test-calloc-split-first          ........................ passed ...   1
+test-calloc-split-last           ........................ passed ...   1
+test-calloc-split-middle         ........................ passed ...   1
+test-calloc-split-vector         ........................ passed ...   2
+test-calloc-coalesce             ........................ passed ...   2
+test-calloc-coalesce-big         ........................ failed ...   0
+test-realloc-no-preallocate      ........................ passed ...   1
+test-realloc-preallocate         ........................ failed ...   0
+test-realloc-arrays              ........................ passed ...   3
+test-realloc-block-reuse         ........................ failed ...   0
+test-realloc-expand-block        ........................ failed ...   0
+test-realloc-no-split            ........................ failed ...   0
+test-realloc-split-one-block     ........................ failed ...   0
+test-realloc-split-first         ........................ failed ...   0
+test-realloc-split-last          ........................ failed ...   0
+test-realloc-split-middle        ........................ failed ...   0
+test-realloc-split-vector        ........................ passed ...   2
+test-realloc-coalesce            ........................ passed ...   3
+test-realloc-coalesce-big        ........................ failed ...   0
+test-all                         ........................ failed ...   0
+
+Total:                                                            62/100
