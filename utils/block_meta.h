@@ -27,3 +27,15 @@ struct block_meta {
 #define STATUS_FREE   0
 #define STATUS_ALLOC  1
 #define STATUS_MAPPED 2
+
+#define MMAP_THRESHOLD (128 * 1024)
+#define ALIGNMENT 8
+#define ALIGN(size) (((size) + (ALIGNMENT - 1)) & ~(ALIGNMENT - 1))
+#define META_SIZE sizeof(struct block_meta)
+
+#ifdef __MAP_ANONYMOUS
+#	define MAP_ANONYMOUS __MAP_ANONYMOUS
+#else
+#	define MAP_ANONYMOUS 0x20
+#endif
+#define MAP_ANON MAP_ANONYMOUS
